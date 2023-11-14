@@ -1,0 +1,34 @@
+<h2 class="center-heading">予定の新規登録</h2>
+
+<%= form_with model: @post do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :title, "タイトル" %></th>
+      <td><%= f.text_field :title, class: "title-textarea" %></td>
+    </tr>
+
+    <tr>
+      <th>期間</th>
+      <td><%= f.label :start_at, "開始日" %><%= f.text_field :start_at %>
+      <%= f.label :end_at, "終了日" %><%= f.text_field :end_at %></td>
+    </tr>
+
+    <tr>
+      <th></th>
+      <td><%= f.check_box :is_all_day %> <%= f.label :all_day, "終日の場合はチェックを入れます" %></td>
+    </tr>
+
+   <tr>
+      <th><%= f.label :memo, "スケジュールメモ" %></th>
+      <td><%= f.text_area :memo, class: "large-textarea" %></td>
+  </tr>
+
+  </table>
+
+  <div>
+    <ul>
+      <li><%= f.submit "保存" %></li>
+      <li><%= link_to "キャンセル", :posts %></li>
+    </ul>
+  </div>
+<% end %>

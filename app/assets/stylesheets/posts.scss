@@ -1,0 +1,101 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px ;
+  }
+  
+  .menu h2 {
+    margin: 0; /* デフォルトのマージンを削除 */
+  }
+  
+  .menu a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+  }
+  
+  .menu a:hover {
+    background-color: #f2f2f2;
+  }
+  
+
+.Table {
+    width: 100%;
+    border-collapse: collapse; /* ボーダーの重なりを避ける */
+  }
+  
+  .Table th, .Table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .Table th {
+    background-color: #f2f2f2;
+  }
+  
+  .FooterBody {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+}
+  
+/*新規登録ページ*/
+h2.center-heading {
+  text-align: center;
+}
+
+table {
+  width: 70%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  writing-mode: horizontal-tb;
+  white-space: nowrap;
+  background-color: #f2f2f2;
+}
+
+.title-textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.large-textarea {
+  width: calc(100% - 18px);
+  height: 150px;
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+div {
+  text-align: center;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+

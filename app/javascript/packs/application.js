@@ -11,3 +11,10 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+// jQuery is no longer included using //= require in Webpacker
+// Instead, you can install it via Yarn or npm and import it like this:
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+import 'jquery-ujs';

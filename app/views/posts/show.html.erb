@@ -1,5 +1,7 @@
 <h3>スケジュール詳細</h3>
 
+<%= render "shared/success", obj: @post %>
+
 <table>
   <tr>
     <th>ID</th>
@@ -10,15 +12,15 @@
     <td><%= @post.title %></td>
   <tr>
     <th>開始日</th>
-    <td><%= @post.start_at %></td>
+    <td><%= @post.start_at&.in_time_zone("Tokyo")&.strftime("%Y/%m/%d") %></td>
   </tr>
   <tr>
     <th>終了日</th>
-    <td><%= @post.end_at %></td>
+    <td><%= @post.end_at&.in_time_zone("Tokyo")&.strftime("%Y/%m/%d") %></td>
   </tr> 
   <tr>
     <th>終日</th>
-    <td><%= @post.is_all_day %></td>
+    <td><%= @post.is_all_day ? "○" : "" %></td>
   </tr> 
   <tr>
     <th>内容</th>

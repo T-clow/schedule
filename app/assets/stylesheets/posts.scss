@@ -61,16 +61,22 @@ table {
 th, td {
   border: 1px solid #ddd;
   padding: 12px;
-  text-align: left;
+  text-align: center;
 }
 
 th {
   writing-mode: horizontal-tb;
   white-space: nowrap;
   background-color: #f2f2f2;
+  text-align: center;
 }
 
 .title-textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.datepicker {
   width: 100%;
   box-sizing: border-box;
 }

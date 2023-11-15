@@ -1,49 +1,57 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   def index
     @posts = Post.all
-    @posts ||= [] # データがnilの場合は空の配列を設定
+    @today_date = Date.today
+    @post_count = @posts.count
+    @no_schedules_message = "現在登録しているスケジュールはありません" if @post_count.zero?
   end
 
   def new
     @post = Post.new
-    
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :memo, :start_at, :end_at, :is_all_day ))
+    @post = Post.new(post_params)
     if @post.save
-      flash[:sccess] = "投稿を作成しました"
-      redirect_to :posts
+      flash[:success] = "投稿を作成しました"
+      redirect_to post_path(@post)
     else
-      flash.now[:failire] ="投稿を作成できませんでした"
+      flash.now[:failure] = "投稿を作成できませんでした"
       render "new"
     end
   end
 
-
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id]) 
   end
 
   def update
-    @post = Post.find(params[:id])
-    if @post.update(params.require(:post).permit(:title, :memo, :start_at, :end_at, :is_all_day ))
-      flash[:sccess] = "投稿を更新しました"
-      redirect_to :posts
+    if @post.update(post_params)
+      flash[:success] = "投稿を更新しました"
+      redirect_to post_path(@post)
     else
-      flash.now[:failire] ="投稿を更新できませんでした"
+      flash.now[:failure] = "投稿を更新できませんでした"
       render "edit"
     end
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
-    flash[:sccess] = "投稿を削除しました"
+    flash[:notice] = "投稿を削除しました"
     redirect_to posts_path
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :memo, :start_at, :end_at, :is_all_day)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

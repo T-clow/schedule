@@ -1,5 +1,7 @@
 <h2 class="center-heading">予定の編集登録</h2>
 
+<%= render "shared/error", obj: @post %>
+
 <%= form_with model: @post do |f| %>
   <table>
     <tr>
@@ -8,11 +10,13 @@
     </tr>
 
     <tr>
-      <th>期間</th>
-      <td>
-        <%= f.label :start_at, "開始日" %><%= f.text_field :start_at %>
-        <%= f.label :end_at, "終了日" %><%= f.text_field :end_at %>
-      </td>
+      <th><%= f.label :start_at, "開始日" %></th>
+      <td><%= f.text_field :start_at, class: "datepicker" %></td>
+    </tr>
+    
+    <tr>
+      <th><%= f.label :end_at, "終了日" %></th>
+      <td><%= f.text_field :end_at, class: "datepicker" %></td>
     </tr>
 
     <tr>
@@ -28,8 +32,8 @@
 
   <div>
     <ul>
-      <li><%= f.submit "保存する" %></li>
-      <li><%= link_to "キャンセル", :posts %></li>
+      <li><%= f.submit "更新する" %></li>
+      <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
     </ul>
   </div>
 <% end %>

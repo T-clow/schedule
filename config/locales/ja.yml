@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      post: "ポスト"
+    attributes:
+      post:
+        title: "タイトル"
+        start_at: "開始日"
+        end_at: "終了日"
+        is_all_day: "終日"
+        memo: "メモ"
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "は必須項目です"
+            start_at:
+              blank: "は必須項目です"
+            end_at:
+              blank: "は必須項目です"

@@ -29,3 +29,7 @@ document.addEventListener('turbolinks:load', function() {
     // 他の設定...
   });
 });
+
+
+//= require data-confirm-modal
+require('data-confirm-modal')

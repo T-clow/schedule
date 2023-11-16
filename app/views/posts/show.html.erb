@@ -1,4 +1,4 @@
-<h3>スケジュール詳細</h3>
+<h2 class="center-heading">スケジュール詳細</h2>
 
 <%= render "shared/success", obj: @post %>
 
@@ -30,7 +30,7 @@
 
 <div>
   <ul>
-    <li><%= link_to "スケジュール一覧に戻る", :posts %></li>
-    <li><%= link_to "編集", [:edit, @post] %></li>
+    <li><%= link_to "スケジュール一覧に戻る", :posts, class: "btn btn-light" %></li>
+    <li><%= link_to "編集", [:edit, @post], class: "btn btn-light" %></li>
   </ul>
 </div>

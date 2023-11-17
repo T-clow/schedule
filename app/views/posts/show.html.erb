@@ -1,0 +1,36 @@
+<h2 class="center-heading">スケジュール詳細</h2>
+
+<%= render "shared/success", obj: @post %>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <td><%= @post.id %></td>
+    </tr>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @post.title %></td>
+  <tr>
+    <th>開始日</th>
+    <td><%= @post.start_at&.in_time_zone("Tokyo")&.strftime("%Y/%m/%d") %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @post.end_at&.in_time_zone("Tokyo")&.strftime("%Y/%m/%d") %></td>
+  </tr> 
+  <tr>
+    <th>終日</th>
+    <td><%= @post.is_all_day ? "○" : "" %></td>
+  </tr> 
+  <tr>
+    <th>内容</th>
+    <td><%= @post.memo %></td>
+  </tr>
+</table>
+
+<div>
+  <ul>
+    <li><%= link_to "スケジュール一覧に戻る", :posts, class: "btn btn-light" %></li>
+    <li><%= link_to "編集", [:edit, @post], class: "btn btn-light" %></li>
+  </ul>
+</div>

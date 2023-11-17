@@ -11,3 +11,23 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+import 'jquery-ujs';
+
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+
+document.addEventListener('turbolinks:load', function() {
+  flatpickr(".datepicker", {
+    // オプションを設定
+    dateFormat: "Y-m-d",
+    // 他の設定...
+  });
+});
+
+
+//= require data-confirm-modal
+require('data-confirm-modal')
